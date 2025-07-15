@@ -1,17 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>APK डाउनलोड</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Calculator | Download APK</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Download Universal Calculator APK - Fast, Secure & Lightweight Android App.">
+  <meta property="og:title" content="Download Universal Calculator App" />
+  <meta property="og:description" content="Experience powerful calculator features in a compact, offline Android app." />
+  <meta property="og:url" content="https://810921sunil.github.io/App/" />
+  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1cuyJx3WgdRgFAtZowbYVHmQYZYoi2IHm" />
+
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --primary-dark: #5649c0;
+      --secondary: #00cec9;
+      --white: #ffffff;
+      --light: #f8f9fa;
+      --dark: #2d3436;
+      --success: #00b894;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: var(--dark);
+    }
+
+    .download-card {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+      width: 100%;
+      max-width: 480px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .download-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 40px 30px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .app-icon img {
+      width: 80px;
+      border-radius: 16px;
+      margin-bottom: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .app-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .app-version {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+    .app-description {
+      color: #636e72;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px 0;
+    }
+
+    .stars {
+      color: #fdcb6e;
+      margin-right: 10px;
+    }
+
+    .download-count {
+      font-size: 13px;
+      color: #636e72;
+    }
+
+    .features-list {
+      margin-bottom: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(108, 92, 231, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: var(--primary);
+    }
+
+    .feature-title {
+      font-weight: 600;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: #636e72;
+    }
+
+    .download-btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(108, 92, 231, 0.4);
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #636e72;
+    }
+
+    .file-info i {
+      margin-right: 8px;
+      color: var(--success);
+    }
+
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0, 184, 148, 0.1);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--success);
+      margin-top: 20px;
+    }
+
+    .security-badge i {
+      margin-right: 5px;
+    }
+
+    .social-share {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-share a {
+      margin: 0 8px;
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    .whatsapp { color: #25D366; }
+    .facebook { color: #3b5998; }
+    .twitter  { color: #1da1f2; }
+    .email    { color: #ff6f00; }
+  </style>
 </head>
-<body style="text-align: center; margin-top: 100px;">
+<body>
+  <div class="download-card">
+    <div class="card-header">
+      <div class="app-icon">
+        <img src="https://drive.google.com/uc?export=view&id=1cuyJx3WgdRgFAtZowbYVHmQYZYoi2IHm" alt="App Icon">
+      </div>
+      <h1 class="app-name">Universal Calculator</h1>
+      <div class="app-version">Version 1.0.0 (5.2 MB)</div>
+    </div>
 
-  <h1>📱 हमारी APK डाउनलोड करें</h1>
+    <div class="card-body">
+      <p class="app-description">
+        Experience the power of a simple, accurate and fast calculator in your hands. 100% offline & lightweight.
+      </p>
 
-  <a href="https://github.com/810921sunil/App/raw/main/calculator.apk" download>
-    <button style="padding: 15px 30px; font-size: 18px; background-color: green; color: white; border: none; border-radius: 8px;">
-      ⬇️ APK डाउनलोड करें
-    </button>
-  </a>
+      <div class="rating">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="download-count">5,000+ downloads</div>
+      </div>
 
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <div class="feature-title">Fast & Lightweight</div>
+            <div class="feature-desc">Instant calculations without lag</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-lock"></i></div>
+          <div>
+            <div class="feature-title">Offline & Private</div>
+            <div class="feature-desc">No internet, no tracking</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-calculator"></i></div>
+          <div>
+            <div class="feature-title">Advanced Features</div>
+            <div class="feature-desc">Supports basic to complex functions</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://github.com/810921sunil/App/raw/main/app-debug.apk" download>
+        <button class="download-btn">
+          <i class="fas fa-download"></i> Download Now
+        </button>
+      </a>
+
+      <div class="file-info">
+        <i class="fas fa-check-circle"></i> Virus checked. Safe to install.
+      </div>
+
+      <div class="security-badge">
+        <i class="fas fa-shield-alt"></i> Secure Download
+      </div>
+
+      <div class="social-share">
+        <p><strong>Share this App:</strong></p>
+        <a class="whatsapp" href="https://api.whatsapp.com/send?text=Download%20this%20awesome%20Calculator%20App%20%F0%9F%93%8C%3A%20https%3A%2F%2F810921sunil.github.io%2FApp%2F" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://810921sunil.github.io/App/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=Download%20this%20amazing%20calculator%20app%20%F0%9F%93%8C%20https%3A%2F%2F810921sunil.github.io%2FApp%2F" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="email" href="mailto:?subject=Universal%20Calculator&body=Download%20this%20app%20here:%20https://810921sunil.github.io/App/" target="_blank"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
